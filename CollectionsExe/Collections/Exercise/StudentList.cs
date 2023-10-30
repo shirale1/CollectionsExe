@@ -9,20 +9,21 @@ namespace CollectionsExe.Collections.Exercise
 {
     //StudentList is a class represented by a List of students.
 
-    public class StudentList
+    public class University
     {
 
         //Targil 1 - write the Property of StudentList called Students
         #region Properties
-       
+        
+        public List<Student> Students { get; set; }
 
         #endregion
 
         //Targil 2 - Write a constructor which initiates the students and calls for Student.FillList()
         #region Constructor
-        public StudentList()
+        public University()
         {
-
+            Students = Student.FillList();
         }
         #endregion
 
@@ -34,6 +35,13 @@ namespace CollectionsExe.Collections.Exercise
 
         public Student FindStudentByName(string name)
         {
+            for(int i=0;i<Students.Count; i++)
+            {
+                if (Students[i].Name == name)
+                {
+                    return Students[i];
+                }
+            }
             return null;
         }
         #endregion
@@ -42,7 +50,16 @@ namespace CollectionsExe.Collections.Exercise
         //Targil 4-  write a method which retrieves a list of Students By Kita
         public List<Student> GetStudentsByKits(string kita)
         {
-            return null;
+            List<Student> newlist = new List<Student>();
+
+            for(int i = 0; i < Studdents.Count; i++)
+            {
+                if(Students[i].Kita == kita)
+                {
+                    newlist.Add(Students[i]);
+                }
+            }
+            return newlist;
         }
         #endregion
 
