@@ -65,12 +65,11 @@ namespace CollectionsExe
 
             #region Update  a list
 
-            //Update an object in a list
-            rectangles[0] = r5;
-            rectangles[0].Length = 4;
-            Console.WriteLine("after placing r5 in index 0");
-
-            #endregion
+                //Update an object in a list
+             
+                Console.WriteLine("after placing r5 in index 0");
+                
+                #endregion
 
             #region transforming list to array and to new list
             //Copy to array ToArray()
@@ -80,54 +79,12 @@ namespace CollectionsExe
             Console.WriteLine("Copied list");
             //todo
 
-            Console.WriteLine("Array");
-            //todo
+                Console.WriteLine("Array");
+                //todo
+                #endregion
+
+            
             #endregion
-            Rectangle[] rectanglesArr = rectangles.ToArray();
-            List<Rectangle> list = rectangles.ToList();
-
-            #endregion
-
-            University university = new University();
-            university.Students = new List<Student>();
-            List<Student> students = new List<Student>();
-            Func<List<>, int, int> Returnsum = (students, kita) =>
-            {
-                int counter = 0;
-                foreach (Student student in students)
-                {
-                    if (student.Kita == kita) counter++;
-                }
-                return counter;
-
-            }
-            Func<List<>, string, Student> Returnstu = (students, name) =>
-            {
-
-                foreach (Student s in students)
-                {
-                    if (s.Name == name)
-                        return s;
-                }
-            }
-            Func<List<>, int, List<>> ReturnList = (students, kita, kitalist) =>
-            {
-                List<Student> kita = new List<Student>();
-                foreach (Student stu in students)
-                {
-                    if (stu.Kita == kita)
-                    {
-                        kita.Add(stu);
-                    }
-                }
-                return kita;
-            }
-
-        /// בדיקת הקוד
-        /// 
-              Console.WriteLine(Returnsum(list, 2)); //return 11
-            Console.WriteLine(Returnstu(list, "Shira"));
-            Console.WriteLine(ReturnList(list, 2));
         }
     }
 }
